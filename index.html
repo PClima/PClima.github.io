@@ -1,226 +1,1127 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://github.com/PClima/portfolio/blob/main/src/assets/favicon-32x32.png?raw=true" rel="shortcut icon" type="image/png">
-    <!-- Primary Meta Tags -->
-    <title>Pedro Lima | Software Engenieer - Web Developer - Cognigy Developer</title>
-    <meta name="title" land="pt-br" content="Pedro Cordeiro - Software Engenieer and Web Developer">
-    <meta name="description" content="Desenvolvedor de Software na IBM">
+    <title>Pedro Lima — Software Developer</title>
+    <meta name="description"
+        content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://github.com/PClima/portfolio/blob/main/src/assets/favicon-32x32.png?raw=true" rel="shortcut icon"
+            type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
 
     <!-- Open Graph / Facebook >
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cordeirolima.net/">
-    <meta property="og:title" content="Pedro Cordeiro - Desenvolvedor de Softwares">
-    <meta property="og:description" content="Desenvolvedor de Software na IBM">
-    <meta property="og:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp"-->
-
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://cordeirolima.net/">
+        <meta property="og:title" content="Pedro Cordeiro - Software & IA Developer">
+        <meta property="og:description" content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
+        <meta property="og:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp"-->
+    
     <!-- Twitter >
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://cordeirolima.net/">
-    <meta property="twitter:title" content="Pedro Cordeiro - Desenvolvedor de Softwares">
-    <meta property="twitter:description" content="Desenvolvedor de Software na IBM">
-    <meta property="twitter:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp">
-    <link href="./dist/output.css" rel="stylesheet"-->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://cordeirolima.net/">
+        <meta property="twitter:title" content="Pedro Cordeiro - Software & IA Developer">
+        <meta property="twitter:description" content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
+        <meta property="twitter:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp">
+        <link href="./dist/output.css" rel="stylesheet"-->
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Megrim&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
-    <link rel="apple-touch-icon" href="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp">
-    <meta name="theme-color" content="#B6A89C"/>
+    <style>
+        :root {
+            --bg: oklch(94% 0.016 62);
+            --surface: oklch(99% 0.006 65);
+            --fg: oklch(18% 0.022 48);
+            --muted: oklch(52% 0.020 54);
+            --border: oklch(87% 0.018 62);
+            --accent: oklch(52% 0.09 48);
+            --accent-s: oklch(96% 0.016 62);
+            --accent-2: oklch(58% 0.12 185);
+            --accent-2s: oklch(94% 0.018 185);
+            --accent-3: oklch(62% 0.12 28);
+            --accent-3s: oklch(96% 0.014 28);
+            --font-d: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+            --font-b: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+            --font-m: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+            --r: 12px;
+            --t: 180ms ease;
+        }
+
+        [data-theme="dark"] {
+            --bg: oklch(13% 0.020 50);
+            --surface: oklch(18% 0.022 52);
+            --fg: oklch(95% 0.008 65);
+            --muted: oklch(64% 0.018 58);
+            --border: oklch(28% 0.022 50);
+            --accent: oklch(72% 0.08 58);
+            --accent-s: oklch(22% 0.06 55);
+            --accent-2: oklch(65% 0.12 185);
+            --accent-2s: oklch(20% 0.06 185);
+            --accent-3: oklch(68% 0.12 28);
+            --accent-3s: oklch(20% 0.06 28);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-b);
+            background: var(--bg);
+            color: var(--fg);
+            line-height: 1.6;
+            transition: background 300ms ease, color 300ms ease;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .wrap {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: color-mix(in oklch, var(--bg) 82%, transparent);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: background 300ms ease, border-color 300ms ease;
+        }
+
+        .nav-i {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 58px;
+        }
+
+        .nav-logo {
+            font-family: 'Megrim', cursive;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .nav-r {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13.5px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color var(--t);
+        }
+
+        .nav-links a:hover {
+            color: var(--fg);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .lang-sw {
+            display: flex;
+            gap: 1px;
+        }
+
+        .lbtn {
+            font-size: 12px;
+            font-family: var(--font-m);
+            font-weight: 500;
+            letter-spacing: .02em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px 9px;
+            border-radius: 5px;
+            color: var(--muted);
+            transition: all var(--t);
+        }
+
+        .lbtn.on {
+            color: var(--accent);
+            background: var(--accent-s);
+        }
+
+        .lbtn:not(.on):hover {
+            color: var(--fg);
+        }
+
+        .theme-btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--t);
+        }
+
+        .theme-btn:hover {
+            color: var(--fg);
+            border-color: var(--muted);
+        }
+
+        .theme-btn svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        @media (max-width: 680px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-r {
+                gap: 8px;
+            }
+        }
+
+        /* HERO */
+        #hero {
+            padding: 148px 0 88px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 55% 60% at 8% 75%, oklch(52% 0.09 48 / 0.10), transparent 68%),
+                radial-gradient(ellipse 40% 38% at 88% 15%, oklch(58% 0.12 185 / 0.08), transparent 65%);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-family: var(--font-m);
+            color: var(--accent);
+            background: var(--accent-s);
+            border: 1px solid color-mix(in oklch, var(--accent) 28%, transparent);
+            padding: 5px 13px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: blink 2.6s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .3
+            }
+        }
+
+        .hero-name {
+            font-family: var(--font-d);
+            font-size: clamp(50px, 8vw, 82px);
+            font-weight: 700;
+            letter-spacing: -0.045em;
+            line-height: 1;
+            color: var(--fg);
+            margin-bottom: 20px;
+        }
+
+        .hero-sub {
+            font-size: clamp(16px, 2.2vw, 19px);
+            color: var(--muted);
+            max-width: 490px;
+            line-height: 1.65;
+            margin-bottom: 36px;
+            letter-spacing: -0.008em;
+        }
+
+        .ctas {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn-p {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--accent);
+            color: oklch(100% 0 0);
+            border: none;
+            padding: 11px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: var(--font-b);
+            text-decoration: none;
+            transition: opacity var(--t);
+        }
+
+        .btn-p:hover {
+            opacity: .84;
+        }
+
+        .btn-s {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: transparent;
+            color: var(--fg);
+            border: 1px solid var(--border);
+            padding: 11px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: var(--font-b);
+            text-decoration: none;
+            transition: border-color var(--t);
+        }
+
+        .btn-s:hover {
+            border-color: var(--muted);
+        }
+
+        .socials {
+            display: flex;
+            gap: 18px;
+        }
+
+        .soc {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color var(--t);
+        }
+
+        .soc:hover {
+            color: var(--fg);
+        }
+
+        .soc svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* SECTIONS */
+        .sec {
+            padding: 88px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .lbl {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-family: var(--font-m);
+        }
+
+        .sec-h {
+            font-family: var(--font-d);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            letter-spacing: -.03em;
+            color: var(--fg);
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 680px) {
+            .sec {
+                padding: 64px 0;
+            }
+
+            #hero {
+                padding: 112px 0 64px;
+            }
+        }
+
+        /* ABOUT */
+        .about-g {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 72px;
+            align-items: start;
+        }
+
+        @media (max-width: 820px) {
+            .about-g {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .about-txt p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.82;
+            margin-bottom: 14px;
+        }
+
+        .about-txt p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-side {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .photo-wrap {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: var(--r);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .stats-g {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .stat {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+            transition: border-color var(--t);
+        }
+
+        .stat:hover {
+            border-color: color-mix(in oklch, var(--accent) 40%, var(--border));
+        }
+
+        .stat-n {
+            font-family: var(--font-d);
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -.04em;
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stat-l {
+            font-size: 11.5px;
+            color: var(--muted);
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        /* PROJECTS */
+        .proj-g {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 18px;
+        }
+
+        .proj-c {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            transition: border-color var(--t), transform var(--t), box-shadow var(--t);
+        }
+
+        .proj-c:hover {
+            border-color: color-mix(in oklch, var(--accent) 40%, var(--border));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px oklch(0% 0 0 / 0.06);
+        }
+
+        [data-theme="dark"] .proj-c:hover {
+            box-shadow: 0 8px 32px oklch(0% 0 0 / 0.32);
+        }
+
+        .proj-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .proj-ico {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .proj-ico svg {
+            width: 19px;
+            height: 19px;
+        }
+
+        .ico-1 {
+            background: var(--accent-s);
+            border: 1px solid color-mix(in oklch, var(--accent) 24%, transparent);
+        }
+
+        .ico-1 svg {
+            color: var(--accent);
+        }
+
+        .ico-2 {
+            background: var(--accent-2s);
+            border: 1px solid color-mix(in oklch, var(--accent-2) 24%, transparent);
+        }
+
+        .ico-2 svg {
+            color: var(--accent-2);
+        }
+
+        .ico-3 {
+            background: var(--accent-3s);
+            border: 1px solid color-mix(in oklch, var(--accent-3) 24%, transparent);
+        }
+
+        .ico-3 svg {
+            color: var(--accent-3);
+        }
+
+        .proj-lnk {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: all var(--t);
+        }
+
+        .proj-lnk:hover {
+            color: var(--fg);
+            border-color: var(--muted);
+        }
+
+        .proj-lnk svg {
+            width: 13px;
+            height: 13px;
+        }
+
+        .proj-t {
+            font-family: var(--font-d);
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -.02em;
+        }
+
+        .proj-d {
+            font-size: 13.5px;
+            color: var(--muted);
+            line-height: 1.68;
+            flex: 1;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            font-size: 11px;
+            font-family: var(--font-m);
+            color: var(--muted);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* STACK */
+        .stack-g {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+            gap: 36px;
+        }
+
+        .scat h3 {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+            font-family: var(--font-m);
+        }
+
+        .sitems {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .si {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 14px;
+            color: var(--fg);
+        }
+
+        .sd {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: var(--cat, var(--border));
+        }
+
+        /* CONTACT */
+        .contact-b {
+            max-width: 520px;
+        }
+
+        .contact-b>p {
+            font-size: 16.5px;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        .clist {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .crow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--fg);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 13px 16px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--surface);
+            transition: border-color var(--t), background var(--t);
+        }
+
+        .crow:hover {
+            border-color: color-mix(in oklch, var(--accent) 40%, var(--border));
+            background: var(--accent-s);
+        }
+
+        .crow svg {
+            width: 15px;
+            height: 15px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .cbadge {
+            font-size: 11px;
+            font-family: var(--font-m);
+            color: var(--muted);
+            margin-left: auto;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0;
+        }
+
+        .foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .foot p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+    </style>
 </head>
 
-<body style="background-color:#B6A89C ;">
-    <nav class="navbar navbar-light navbar-expand-md py-3">
-        <div class="container">
-            <h1 style="font-family: Megrim, serif;color: #080807; font-weight: 500; font-size: 41px;">PEDRO LIMA</h1><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse text-end" id="navcol-2">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#certificados">Certificados</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#habilidades">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#projects">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#contact">Contato</a></li>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="wrap nav-i">
+            <a href="#hero" class="nav-logo">Pedro Lima</a>
+            <div class="nav-r">
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="n_about"></a></li>
+                    <li><a href="#projects" data-i18n="n_projects"></a></li>
+                    <li><a href="#stack" data-i18n="n_stack"></a></li>
+                    <li><a href="#contact" data-i18n="n_contact"></a></li>
                 </ul>
-                <a class="btn ms-md-2 rounded-pill" role="button" href="CV - Pedro Cordeiro-ptbr.pdf" style="background: #0F1E23; color: #AEBCAE; font-weight: bold;" download>Currículo</a>
-                <div class="vr mx-4"></div>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link disabled" href="./"><img width="28" height="28" src="https://img.icons8.com/color/28/brazil.png" alt="brazil" style="border: 0.1px solid #0F1E23; border-radius: 100%; padding: 5px;"/></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="en/"><img width="28" height="28" src="https://img.icons8.com/color/28/usa.png" alt="usa"/></a></li>
-                </ul>
+                <div class="nav-controls">
+                    <div class="lang-sw">
+                        <button class="lbtn on" id="lpt" onclick="setLang('pt')">PT</button>
+                        <button class="lbtn" id="len" onclick="setLang('en')">EN</button>
+                    </div>
+                    <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+                        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            style="display:none">
+                            <circle cx="12" cy="12" r="5" />
+                            <path
+                                d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                        </svg>
+                    </button>
+                    
+                </div>
+                <div class="nav-controls">
+
+                </div>
             </div>
         </div>
     </nav>
-    <div class="container d-md-flex justify-content-md-center align-items-md-center py-4 py-xl-5" id="hero" name="hero">
-        <div class="row gy-4 gy-md-0 d-md-flex flex-sm-row flex-md-row justify-content-md-center align-items-md-center">
-            <div class="col-md-auto text-center text-sm-center text-md-center d-flex d-sm-flex d-md-flex align-items-center justify-content-sm-center flex-md-row align-items-md-end justify-content-xl-center">
-                <div class="text-center">
-                    <h1 class="text-uppercase fw-bold text-start text-sm-center text-md-center text-lg-start text-xl-start text-xxl-start" style="width: 100%;">Olá, sou o pedro.<br>Prazer em conhecê-lo</h1>
-                    <p class="text-center my-3">Desenvolvedor Web, Aplicações e Chatbots</p><a href="https://github.com/PClima" style="margin: 20px;" name="github"><img src="https://img.icons8.com/ios-glyphs/120/000000/github.png" alt="github" width="80em" height="80em"></a><a href="https://www.linkedin.com/in/pedro-cordeiro/" style="margin: 20px;"  name="linkedin"><img src="https://img.icons8.com/ios-filled/120/000000/linkedin.png" alt="linkedin" width="80em" height="80em"></a><a href="https://stackoverflow.com/users/12931846/pedro-cordeiro-lima" style="margin: 20px;" name="stackoverflow"><img src="https://img.icons8.com/ios-filled/120/000000/stackoverflow.png" alt="stackoverflow" width="80em" height="80em"></a>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="wrap">
+            <div class="badge">
+                <span class="dot"></span>
+                <span data-i18n="badge"></span>
+            </div>
+            <h1 class="hero-name">Pedro Lima</h1>
+            <p class="hero-sub" data-i18n="tagline"></p>
+            <div class="ctas">
+                <a href="#projects" class="btn-p" data-i18n="cta1"></a>
+                <a href="#contact" class="btn-s" data-i18n="cta2"></a>
+            </div>
+            <div class="socials">
+                <a href="https://github.com/PClima" target="_blank" rel="noopener" class="soc">
+                    <svg viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/pedro-cordeiro/" target="_blank" rel="noopener" class="soc">
+                    <svg viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="sec">
+        <div class="wrap">
+            <p class="lbl" data-i18n="n_about"></p>
+            <h2 class="sec-h" data-i18n="about_h"></h2>
+            <div class="about-g">
+                <div class="about-txt">
+                    <p data-i18n="about_p1"></p>
+                    <p data-i18n="about_p2"></p>
                 </div>
-            </div>
-            <div class="col heroImageContainer d-md-flex d-lg-flex justify-content-md-center justify-content-lg-center">
-                <div class="d-flex flex-column align-items-center align-items-xl-center"><img class="img-fluid"src="https://res.cloudinary.com/drokum14x/image/upload/v1767994186/profile2_sxun6t.jpg" alt="profie img"></div>
-            </div>
-        </div>
-    </div>
-    <div class="container py-4 py-xl-5" id="sobre" name="sobre">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto" style="width: 100%;">
-                <h2>Sobre Mim</h2>
-                <p class="w-lg-50">Desenvolvedor full-stack com expertise em projetos de alta complexidade, desde aplicações (Java/C) até plataformas web
-                modernas (NestJS/Angular). Desenvolvo soluções tecnológicas que unem performance, conformidade e escalabilidade, com
-                foco em integração de sistemas e automação de processos.</p>
-                
-                <p class="w-lg-50">Minha trajetória profissional inclui experiências na IBM, onde desenvolvi uma plataforma de análise de dados com
-                visibilidade estratégica e atuei na atualização fiscal de sistemas legados. Atualmente, na Bosch, faço parte do time
-                responsável por gerenciar a plataforma de desenvolvimento de chatbots Cognigy, criando experiências personalizadas e
-                precisas através do uso de IA generativa para aprimorar o atendimento.</p>
-                
-                <p class="w-lg-50">Busco desafios que exijam inovação técnica e colaboração multidisciplinar. Apaixonado por transformar requisitos
-                complexos em sistemas eficientes, sempre alinhado às melhores práticas de engenharia de software.</p>
-            </div>
-        </div>
-    </div>
-    <div class="container py-4 py-xl-5" id="certificados" name="certificados">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <h2>Certificados</h2>
-            </div>
-        </div>
-        
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-2 text-center d-md-flex d-lg-flex justify-content-md-center justify-content-lg-center">
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><a href="https://www.credly.com/badges/9c463b8e-c6eb-4915-ae27-ba8071ae749f/public_url"><img src="https://res.cloudinary.com/drokum14x/image/upload/v1689857833/portfolio/image_hgoqmw.webp" width="100%" height="40%" alt="AZ-900 Certification"></a></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><a href="https://www.credly.com/badges/2d647f66-d40e-49ba-904b-43b659c2e852/public_url"><img src="https://res.cloudinary.com/drokum14x/image/upload/v1719873514/aws_certificate_badge.png" width="100%" height="35%" alt="AWS Certified Cloud Practitioner"></a></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><a href="https://www.credly.com/badges/eae9217e-72a2-4f13-8222-9c83b7cc0852/public_url"><img src="https://res.cloudinary.com/drokum14x/image/upload/v1689857833/portfolio/cert_mark_SP_badge_large_300px_e6nmj2.webp" width="100%" height="40%" alt="SAFE Certification"></a></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><a href="https://cs.lpi.org/caf/Xamman/candidate_area/certificate/LE-1/phkwfqq6l6"><img src="https://res.cloudinary.com/drokum14x/image/upload/c_crop,w_380,h_380/v1744412888/k-752x363_zy6abx.png" width="100%" height="35%" alt="LPI Essentials certification"></a></div>
-            </div>
-        </div>
-    </div>
-    <div class="container" id="habilidades" name="habilidades">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto" style="width: 100%; margin-top: 100px;">
-                <h2>Habilidades</h2>
-            </div>
-        </div>
-        <div class="row gy-4 row-cols-2 row-cols-md-3 row-cols-xl-6 text-center d-md-flex d-lg-flex justify-content-md-center justify-content-lg-center">
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/color/96/000000/html-5--v1.png" alt="html" width="80px" height="80px"/></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/color/96/000000/css3.png" alt="css" width="80px" height="80px"/></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/color/96/000000/javascript--v1.png" alt="javascript" width="80px" height="80px"/></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/color/96/000000/angularjs.png" alt="angular" width="80px" height="80px"/></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/color/96/000000/nodejs.png" alt="nodejs" width="80px" height="80px"/></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/material-sharp/96/000000/mysql-logo.png" alt="mysql" width="80px" height="80px"/></div>
-            </div>
-        </div>
-        <div class="pt-4 row gy-4 row-cols-2 row-cols-md-3 row-cols-xl-6 text-center d-md-flex d-lg-flex justify-content-md-center justify-content-lg-center">
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/?size=100&id=20906&format=png&color=000000" alt="html" width="80px" height="80px"/></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/?size=100&id=G0CnLqqcRBXl&format=png&color=000000" alt="css" width="80px" height="80px"/></div>
-            </div>
-            <div class="col">
-                <div class="text-center d-flex flex-column align-items-center align-items-xl-center"><img src="https://img.icons8.com/?size=100&id=yd0CU8Tslj28&format=png&color=000000" alt="javascript" width="80px" height="80px"/></div>
-            </div>
-        </div>
-    </div>
-    <div class="container" id="projects" name="projects">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto" style="width: 100%; margin-top: 100px;">
-                <h2>Projetos</h2>
-            </div>
-        </div>
-        <div class="row" id="projectsDiv">
-            <article class="projectsArticle">
-                <div class="imgProjectArticle">
-                    <img src="https://res.cloudinary.com/drokum14x/image/upload/v1744653446/113fc8be-0ea0-4157-af3d-9482afdb788d.png" alt="ecommerce_img" width="100%" height="100%">
-                </div>
-                <div class="describeProjectArticle">
-                    <h3>Assistente pessoal</h3>
-                    <h4>Técnologias Utilizadas: <a href="https://n8n.io"><span>N8N</span></a>, <a href="https://groq.com"><span>Groq</span></a>, <a href="https://aws.amazon.com"><span>AWS</span></a>, <a href="https://www.postgresql.org"><span>Postgres</span></a></h4>
-                    <ul>
-                        <li>Criação de um assistente pessoal pelo WhatsApp</li>
-                        <li>À partir de mensagens enviadas ao assistente, a IA faz toda a validação e execução da tarefa solicitada.</li>
-                        <li>Modelo de dados em Postgres para persistência dos dados.</li>
-                        <li>Modelo LLM: Llama 3.3-70b-Versatille</li>
-                        <li>Instância EC2 e RDS criadas na AWS para server side</li>
-                    </ul>
-                </div>
-            </article>
-            <article class="projectsArticle">
-                <div class="imgProjectArticle">
-                    <!-- <img src="https://res.cloudinary.com/drokum14x/image/upload/c_scale,h_195,w_350/v1689854233/portfolio/instagramClone_kvqgar.webp" alt="instagram_clone_img" width="100%" height="100%"> -->
-                </div>
-                <div class="describeProjectArticle">
-                    <h3>API Restful para e-commerce</h3>
-                    <h4>Técnologias Utilizadas: <span>Node.Js</span> , <span>Express</span>, <span>PostgreSQL</span>, <span>Swagger</span></h4>
-                    <ul>
-                        <li>Projeto de API Restful para ecommerce, com CRUD completo de produtos</li>
-                        <li>Utilizando PostgresSQL para sua base de dados</li>
-                        <li>Utilizando Swagger para a documentação da API</li>
-                        <li>Utilizando JWT para autenticação de usuário</li>
-                        <li>Utilizando Clean Architecture na construção do projeto</li>
-                    </ul>
-                    <div class="linksProjectArticle">
-                        <!-- <a href="https://cloneinstagram-pedrolima.netlify.app" class="liveLink" target="_blank" rel="noopener noreferrer">Live</a> -->
-                        <a href="https://github.com/PClima/api_vendas" class="repoLink" target="_blank" rel="noopener noreferrer">Repo</a>
+                <div class="about-side">
+                    <div class="photo-wrap">
+                        <img src="https://res.cloudinary.com/drokum14x/image/upload/v1767994186/profile2_sxun6t.jpg"
+                            alt="Pedro Lima">
                     </div>
-                </div>
-            </article>
-            
-            <div class="moreProjectArticle text-center justify-content-center">
-                <a href="https://github.com/PClima" target="_blank"><h3>Mais projetos</h3></a>
-            </div>
-        </div>
-    </div>
-    <div class="container" id="contact" name="contact">
-        <div class="row mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto" style="width: 100%; margin-top: 100px;">
-                <h2>Contato</h2>
-            </div>
-        </div>
-        <div class="row" id="contactDiv">
-            <div class="contactTypes">
-                <div class="flexContainer">
-                    <div class="typeBox">
-                        <img width="80" height="80" src="https://img.icons8.com/carbon-copy/100/FFFFFF/new-post--v1.png" alt="mail-icon"/>
-                        <a href="mailto:cordeirolima.pedro@gmail.com">cordeirolima.pedro@gmail.com</a>
-                        <p>Envie um email</p>
-                    </div>
-                </div>
-                <div class="flexContainer">
-                    <div class="typeBox">
-                        <img width="70" height="70" src="https://img.icons8.com/ios/100/FFFFFF/phone--v1.png" alt="phone-icon" style="margin-bottom: 10px;"/>
-                        <span>+55 (19) 98381-9760</span>
-                        <p>Me ligue</p>
+                    <div class="stats-g">
+                        <div class="stat">
+                            <div class="stat-n">4+</div>
+                            <div class="stat-l" data-i18n="st1"></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n">2</div>
+                            <div class="stat-l" data-i18n="st2"></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n">3+</div>
+                            <div class="stat-l" data-i18n="st3"></div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-n" style="font-size:20px;letter-spacing:-.01em">Adv</div>
+                            <div class="stat-l" data-i18n="st4"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="sec">
+        <div class="wrap">
+            <p class="lbl" data-i18n="n_projects"></p>
+            <h2 class="sec-h" data-i18n="proj_h"></h2>
+            <div class="proj-g">
+
+                <div class="proj-c">
+                    <div class="proj-top">
+                        <div class="proj-ico ico-1">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                                <path
+                                    d="M18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="proj-t" data-i18n="p1_t"></div>
+                    <p class="proj-d" data-i18n="p1_d"></p>
+                    <div class="tags">
+                        <span class="tag">N8N</span><span class="tag">Groq</span><span class="tag">Llama 3.3-70b</span>
+                        <span class="tag">AWS EC2</span><span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="proj-c">
+                    <div class="proj-top">
+                        <div class="proj-ico ico-2">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+                            </svg>
+                        </div>
+                        <a href="https://github.com/PClima/api_vendas" target="_blank" rel="noopener" class="proj-lnk"
+                            title="GitHub">
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="proj-t" data-i18n="p2_t"></div>
+                    <p class="proj-d" data-i18n="p2_d"></p>
+                    <div class="tags">
+                        <span class="tag">Node.js</span><span class="tag">Express</span><span
+                            class="tag">PostgreSQL</span>
+                        <span class="tag">JWT</span><span class="tag">Swagger</span><span class="tag">Clean Arch</span>
+                    </div>
+                </div>
+
+                <div class="proj-c">
+                    <div class="proj-top">
+                        <div class="proj-ico ico-3">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                            </svg>
+                        </div>
+                        <a href="https://github.com/PClima/FinPlan" target="_blank" rel="noopener" class="proj-lnk" title="GitHub">
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="proj-t" data-i18n="p3_t"></div>
+                    <p class="proj-d" data-i18n="p3_d"></p>
+                    <div class="tags">
+                        <span class="tag">JavaScript</span><span class="tag">Node.js</span><span
+                            class="tag">MySQL</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="sec">
+        <div class="wrap">
+            <p class="lbl" data-i18n="n_stack"></p>
+            <h2 class="sec-h" data-i18n="stack_h"></h2>
+            <div class="stack-g">
+                <div class="scat">
+                    <h3 data-i18n="sc1"></h3>
+                    <div class="sitems">
+                        <div class="si"><span class="sd" style="--cat: var(--accent)"></span>JavaScript / TypeScript
+                        </div>
+                        <div class="si"><span class="sd" style="--cat: var(--accent)"></span>Angular</div>
+                        <div class="si"><span class="sd" style="--cat: var(--accent)"></span>HTML &amp; CSS</div>
+                    </div>
+                </div>
+                <div class="scat">
+                    <h3 data-i18n="sc2"></h3>
+                    <div class="sitems">
+                        <div class="si"><span class="sd" style="--cat: var(--accent-2)"></span>Node.js / NestJS</div>
+                        <div class="si"><span class="sd" style="--cat: var(--accent-2)"></span>Express</div>
+                        <div class="si"><span class="sd" style="--cat: var(--accent-2)"></span>Java</div>
+                        <div class="si"><span class="sd" style="--cat: var(--accent-2)"></span>PHP</div>
+                    </div>
+                </div>
+                <div class="scat">
+                    <h3 data-i18n="sc3"></h3>
+                    <div class="sitems">
+                        <div class="si"><span class="sd" style="--cat: oklch(62% 0.14 295)"></span>Cognigy</div>
+                        <div class="si"><span class="sd" style="--cat: oklch(62% 0.14 295)"></span>N8N</div>
+                        <div class="si"><span class="sd" style="--cat: oklch(62% 0.14 295)"></span>Groq / Llama</div>
+                        <div class="si"><span class="sd" style="--cat: oklch(62% 0.14 295)"></span>Generative AI</div>
+                    </div>
+                </div>
+                <div class="scat">
+                    <h3 data-i18n="sc4"></h3>
+                    <div class="sitems">
+                        <div class="si"><span class="sd" style="--cat: oklch(58% 0.14 145)"></span>AWS (EC2, RDS)</div>
+                        <div class="si"><span class="sd" style="--cat: oklch(58% 0.14 145)"></span>Azure (AZ-900)</div>
+                        <div class="si"><span class="sd" style="--cat: oklch(58% 0.14 145)"></span>Linux (LPI)</div>
+                        <div class="si"><span class="sd" style="--cat: oklch(58% 0.14 145)"></span>Git / GitHub</div>
+                    </div>
+                </div>
+                <div class="scat">
+                    <h3 data-i18n="sc5"></h3>
+                    <div class="sitems">
+                        <div class="si"><span class="sd" style="--cat: var(--accent-3)"></span>PostgreSQL</div>
+                        <div class="si"><span class="sd" style="--cat: var(--accent-3)"></span>MySQL</div>
+                    </div>
+                </div>
+                <div class="scat">
+                    <h3 data-i18n="sc6"></h3>
+                    <div class="sitems">
+                        <div class="si"><span class="sd"></span>Swagger / OpenAPI</div>
+                        <div class="si"><span class="sd"></span>REST APIs</div>
+                        <div class="si"><span class="sd"></span>Clean Architecture</div>
+                        <div class="si"><span class="sd"></span>SAFe (Agile)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="sec">
+        <div class="wrap">
+            <p class="lbl" data-i18n="n_contact"></p>
+            <h2 class="sec-h" data-i18n="cont_h"></h2>
+            <div class="contact-b">
+                <p data-i18n="cont_p"></p>
+                <div class="clist">
+                    <a href="mailto:cordeirolima.pedro@gmail.com" class="crow">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                        </svg>
+                        cordeirolima.pedro@gmail.com
+                        <span class="cbadge">Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pedro-cordeiro/" target="_blank" rel="noopener" class="crow">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                        </svg>
+                        linkedin.com/in/pedro-cordeiro
+                        <span class="cbadge">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/PClima" target="_blank" rel="noopener" class="crow">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                        github.com/PClima
+                        <span class="cbadge">GitHub</span>
+                    </a>
+                    <a href=".\[EN]CV-PedroLima.pdf" target="_blank" rel="noopener" class="crow" role="button" download>
+                        <svg fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.057 45.057" xml:space="preserve">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g>
+                                    <g id="_x35_8_24_">
+                                        <g>
+                                            <path
+                                                d="M19.558,25.389c-0.067,0.176-0.155,0.328-0.264,0.455c-0.108,0.129-0.24,0.229-0.396,0.301 c-0.156,0.072-0.347,0.107-0.57,0.107c-0.313,0-0.572-0.068-0.78-0.203c-0.208-0.137-0.374-0.316-0.498-0.541 c-0.124-0.223-0.214-0.477-0.27-0.756c-0.057-0.279-0.084-0.564-0.084-0.852c0-0.289,0.027-0.572,0.084-0.853 c0.056-0.281,0.146-0.533,0.27-0.756c0.124-0.225,0.29-0.404,0.498-0.541c0.208-0.137,0.468-0.203,0.78-0.203 c0.271,0,0.494,0.051,0.666,0.154c0.172,0.105,0.31,0.225,0.414,0.361c0.104,0.137,0.176,0.273,0.216,0.414 c0.04,0.139,0.068,0.25,0.084,0.33h2.568c-0.112-1.08-0.49-1.914-1.135-2.502c-0.644-0.588-1.558-0.887-2.741-0.895 c-0.664,0-1.263,0.107-1.794,0.324c-0.532,0.215-0.988,0.52-1.368,0.912c-0.38,0.392-0.672,0.863-0.876,1.416 c-0.204,0.551-0.307,1.165-0.307,1.836c0,0.631,0.097,1.223,0.288,1.77c0.192,0.549,0.475,1.021,0.847,1.422 s0.825,0.717,1.361,0.949c0.536,0.23,1.152,0.348,1.849,0.348c0.624,0,1.18-0.105,1.668-0.312 c0.487-0.209,0.897-0.482,1.229-0.822s0.584-0.723,0.756-1.146c0.172-0.422,0.259-0.852,0.259-1.283h-2.593 C19.68,25.023,19.627,25.214,19.558,25.389z">
+                                            </path>
+                                            <polygon
+                                                points="26.62,24.812 26.596,24.812 25.192,19.616 22.528,19.616 25.084,28.184 28.036,28.184 30.713,19.616 28,19.616 ">
+                                            </polygon>
+                                            <path
+                                                d="M33.431,0H5.179v45.057h34.699V6.251L33.431,0z M36.878,42.056H8.179V3h23.706v4.76h4.992L36.878,42.056L36.878,42.056z">
+                                            </path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <p data-i18n="cv"></p>
+                        <span class="cbadge">CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; Pedro Cordeiro 2026</p>
+        <div class="wrap foot">
+            <p data-i18n="foot"></p>
+            <p>Pedro Cordeiro Lima</p>
+        </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+        const T = {
+            pt: {
+                badge: "Bosch Brasil",
+                tagline: "Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web de alta performance.",
+                cta1: "Ver Projetos", cta2: "Entre em contato",
+                n_about: "Sobre", n_projects: "Projetos", n_stack: "Stack", n_contact: "Contato",
+                about_h: "Sobre Mim",
+                about_p1: "Desenvolvedor com mais de 4 anos de experiência em projetos de alta complexidade. Trabalho atualmente na Bosch, onde desenvolvo chatbots e agentes conversacionais com IA generativa utilizando a plataforma Cognigy — criando experiências de atendimento personalizadas para canais B2B e B2C globais.",
+                about_p2: "Minha trajetória inclui projetos na IBM em aplicações Mainframe, plataformas de análise de dados e suporte a sistemas de configuração de servidores, além de estágio na Greenbrier Maxion com desenvolvimento de intranet e dashboards internos. Formado em Engenharia da Computação pela UNASP (2024).",
+                st1: "Anos de experiência", st2: "Empresas de grande porte", st3: "Certificações técnicas", st4: "Inglês Avançado",
+                proj_h: "Trabalhos em destaque",
+                p1_t: "Assistente Pessoal via WhatsApp",
+                p1_d: "Agente de IA que interpreta mensagens em linguagem natural e executa tarefas automatizadas pelo WhatsApp. Modelo Llama 3.3-70b-Versatile via Groq, orquestrado com N8N, dados persistidos em PostgreSQL e infraestrutura na AWS (EC2 + RDS).",
+                p2_t: "API RESTful de E-commerce",
+                p2_d: "API REST construída com Clean Architecture, autenticação JWT, documentação Swagger e CRUD completo de produtos. Estudo aprofundado de boas práticas de back-end com Node.js e PostgreSQL.",
+                p3_t: "Dashboard Financeiro",
+                p3_d: "Aplicação web para organização e visualização de finanças pessoais. Controle de receitas, despesas e metas com visualização de dados e categorização de transações.",
+                stack_h: "Tecnologias",
+                sc1: "Front-end", sc2: "Back-end", sc3: "IA & Chatbots", sc4: "Cloud & DevOps", sc5: "Banco de Dados", sc6: "Ferramentas",
+                cont_h: "Vamos conversar",
+                cont_p: "Estou aberto a oportunidades CLT e projetos freelance. Se você tem um desafio técnico interessante ou quer trocar uma ideia, entre em contato.",
+                foot: "© 2026 Pedro Cordeiro Lima",
+                cv: "Currículo",
+            },
+            en: {
+                badge: "Bosch Brazil",
+                tagline: "Fullstack developer specializing in conversational AI agents and high-performance web applications.",
+                cta1: "View Projects", cta2: "Get in touch",
+                n_about: "About", n_projects: "Projects", n_stack: "Stack", n_contact: "Contact",
+                about_h: "About Me",
+                about_p1: "Developer with 4+ years of experience in high-complexity projects. Currently at Bosch, building chatbots and conversational AI agents using the Cognigy platform — delivering personalized customer experiences across global B2B and B2C channels.",
+                about_p2: "My background includes projects at IBM on Mainframe applications, data analytics platforms, and server configuration systems, plus a web development internship at Greenbrier Maxion. Computer Engineering graduate, UNASP (2024).",
+                st1: "Years of experience", st2: "Enterprise companies", st3: "Tech certifications", st4: "Advanced English",
+                proj_h: "Featured work",
+                p1_t: "WhatsApp AI Personal Assistant",
+                p1_d: "AI agent that interprets natural language messages and runs automated tasks over WhatsApp. Uses Llama 3.3-70b-Versatile via Groq, orchestrated with N8N, PostgreSQL for data persistence, and AWS (EC2 + RDS) for infrastructure.",
+                p2_t: "E-commerce RESTful API",
+                p2_d: "REST API built with Clean Architecture, JWT authentication, Swagger docs, and full product CRUD. An in-depth study of Node.js and PostgreSQL back-end best practices.",
+                p3_t: "Financial Dashboard",
+                p3_d: "Web application for personal finance organization and visualization. Tracks income, expenses, and goals with data visualization and transaction categorization.",
+                stack_h: "Technologies",
+                sc1: "Front-end", sc2: "Back-end", sc3: "AI & Chatbots", sc4: "Cloud & DevOps", sc5: "Databases", sc6: "Tools",
+                cont_h: "Let's talk",
+                cont_p: "Open to full-time positions and freelance projects. If you have an interesting technical challenge or just want to connect, reach out.",
+                foot: "© 2026 Pedro Cordeiro Lima",
+                cv: "Curriculum",
+            }
+        };
+
+        function setLang(l) {
+            const d = T[l];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const k = el.getAttribute('data-i18n');
+                if (d[k] !== undefined) el.textContent = d[k];
+            });
+            document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+            document.getElementById('lpt').classList.toggle('on', l === 'pt');
+            document.getElementById('len').classList.toggle('on', l === 'en');
+            try { localStorage.setItem('pl_lang', l); } catch (e) { }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            document.getElementById('icon-moon').style.display = next === 'dark' ? 'none' : '';
+            document.getElementById('icon-sun').style.display = next === 'dark' ? '' : 'none';
+            try { localStorage.setItem('pl_theme', next); } catch (e) { }
+        }
+
+        function dowload_cv(){
+
+        }
+
+        (function () {
+            let lang = 'pt', theme = 'light';
+            try {
+                lang = localStorage.getItem('pl_lang') || 'pt';
+                theme = localStorage.getItem('pl_theme') || 'light';
+            } catch (e) { }
+            document.documentElement.setAttribute('data-theme', theme);
+            if (theme === 'dark') {
+                document.getElementById('icon-moon').style.display = 'none';
+                document.getElementById('icon-sun').style.display = '';
+            }
+            setLang(lang);
+        })();
+    </script>
 </body>
+
 </html>
