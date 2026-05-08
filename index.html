@@ -9,26 +9,22 @@
         content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://github.com/PClima/portfolio/blob/main/src/assets/favicon-32x32.png?raw=true" rel="shortcut icon"
-            type="image/png">
-
+    <link href="https://github.com/PClima/portfolio/blob/main/src/assets/favicon-32x32.png?raw=true" rel="shortcut icon" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
-
     <!-- Open Graph / Facebook >
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://cordeirolima.net/">
-        <meta property="og:title" content="Pedro Cordeiro - Software & IA Developer">
-        <meta property="og:description" content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
-        <meta property="og:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp"-->
+            <meta property="og:type" content="website">
+            <meta property="og:url" content="https://cordeirolima.net/">
+            <meta property="og:title" content="Pedro Cordeiro - Software & IA Developer">
+            <meta property="og:description" content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
+            <meta property="og:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp"-->
     
     <!-- Twitter >
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://cordeirolima.net/">
-        <meta property="twitter:title" content="Pedro Cordeiro - Software & IA Developer">
-        <meta property="twitter:description" content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
-        <meta property="twitter:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp">
-        <link href="./dist/output.css" rel="stylesheet"-->
-
+            <meta property="twitter:card" content="summary_large_image">
+            <meta property="twitter:url" content="https://cordeirolima.net/">
+            <meta property="twitter:title" content="Pedro Cordeiro - Software & IA Developer">
+            <meta property="twitter:description" content="Desenvolvedor fullstack especializado em agentes de IA conversacional e aplicações web.">
+            <meta property="twitter:image" content="https://res.cloudinary.com/drokum14x/image/upload/v1689856224/portfolio/apple-touch-icon_jmmbul.webp">
+            <link href="./dist/output.css" rel="stylesheet"-->
     <style>
         :root {
             --bg: oklch(94% 0.016 62);
@@ -98,6 +94,39 @@
             padding: 0 28px;
         }
 
+        /* CURSOR SPOTLIGHT */
+        #cursor-glow {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            width: 480px;
+            height: 480px;
+            border-radius: 50%;
+            background: radial-gradient(circle, oklch(52% 0.09 48 / 0.055), transparent 65%);
+            transform: translate(-50%, -50%);
+            left: -600px;
+            top: -600px;
+            transition: left 0.18s ease, top 0.18s ease, opacity 0.4s ease;
+        }
+
+        [data-theme="dark"] #cursor-glow {
+            background: radial-gradient(circle, oklch(72% 0.08 58 / 0.07), transparent 65%);
+        }
+
+        /* SCROLL PROGRESS */
+        #scroll-bar {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 2px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            border-radius: 0 2px 2px 0;
+            z-index: 10;
+            pointer-events: none;
+            transition: width 60ms linear;
+        }
+
         /* NAV */
         nav {
             position: fixed;
@@ -145,10 +174,33 @@
             color: var(--muted);
             text-decoration: none;
             transition: color var(--t);
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
         }
 
         .nav-links a:hover {
             color: var(--fg);
+        }
+
+        .nav-links a.active {
+            color: var(--fg);
+        }
+
+        .nav-links a.active::after {
+            transform: scaleX(1);
         }
 
         .nav-controls {
@@ -226,14 +278,66 @@
             overflow: hidden;
         }
 
-        #hero::before {
-            content: '';
+        .hero-glow {
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background:
-                radial-gradient(ellipse 55% 60% at 8% 75%, oklch(52% 0.09 48 / 0.10), transparent 68%),
-                radial-gradient(ellipse 40% 38% at 88% 15%, oklch(58% 0.12 185 / 0.08), transparent 65%);
+            overflow: hidden;
+        }
+
+        .hg1,
+        .hg2 {
+            position: absolute;
+            border-radius: 50%;
+            transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .hg1 {
+            width: 60%;
+            height: 70%;
+            left: -8%;
+            bottom: -15%;
+            background: radial-gradient(ellipse, oklch(52% 0.09 48 / 0.12), transparent 68%);
+        }
+
+        .hg2 {
+            width: 42%;
+            height: 44%;
+            right: -4%;
+            top: -8%;
+            background: radial-gradient(ellipse, oklch(58% 0.12 185 / 0.09), transparent 68%);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .he-1 {
+            animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both 0.05s;
+        }
+
+        .he-2 {
+            animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both 0.18s;
+        }
+
+        .he-3 {
+            animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both 0.30s;
+        }
+
+        .he-4 {
+            animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both 0.42s;
+        }
+
+        .he-5 {
+            animation: fadeUp 0.65s cubic-bezier(0.22, 1, 0.36, 1) both 0.54s;
         }
 
         .badge {
@@ -309,11 +413,12 @@
             font-weight: 500;
             font-family: var(--font-b);
             text-decoration: none;
-            transition: opacity var(--t);
+            transition: opacity var(--t), transform var(--t);
         }
 
         .btn-p:hover {
             opacity: .84;
+            transform: translateY(-1px);
         }
 
         .btn-s {
@@ -329,11 +434,12 @@
             font-weight: 500;
             font-family: var(--font-b);
             text-decoration: none;
-            transition: border-color var(--t);
+            transition: border-color var(--t), transform var(--t);
         }
 
         .btn-s:hover {
             border-color: var(--muted);
+            transform: translateY(-1px);
         }
 
         .socials {
@@ -358,6 +464,19 @@
         .soc svg {
             width: 15px;
             height: 15px;
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* SECTIONS */
@@ -453,11 +572,12 @@
             border: 1px solid var(--border);
             border-radius: 10px;
             padding: 18px;
-            transition: border-color var(--t);
+            transition: border-color var(--t), transform var(--t);
         }
 
         .stat:hover {
             border-color: color-mix(in oklch, var(--accent) 40%, var(--border));
+            transform: translateY(-1px);
         }
 
         .stat-n {
@@ -491,17 +611,17 @@
             display: flex;
             flex-direction: column;
             gap: 14px;
-            transition: border-color var(--t), transform var(--t), box-shadow var(--t);
+            transition: border-color var(--t), box-shadow var(--t);
+            transform-style: preserve-3d;
+            will-change: transform;
         }
 
         .proj-c:hover {
             border-color: color-mix(in oklch, var(--accent) 40%, var(--border));
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px oklch(0% 0 0 / 0.06);
         }
 
         [data-theme="dark"] .proj-c:hover {
-            box-shadow: 0 8px 32px oklch(0% 0 0 / 0.32);
+            box-shadow: 0 12px 36px oklch(0% 0 0 / 0.38);
         }
 
         .proj-top {
@@ -603,6 +723,11 @@
             border: 1px solid var(--border);
             padding: 3px 8px;
             border-radius: 4px;
+            transition: border-color var(--t), color var(--t);
+        }
+
+        .proj-c:hover .tag {
+            border-color: color-mix(in oklch, var(--accent) 20%, var(--border));
         }
 
         /* STACK */
@@ -634,6 +759,11 @@
             gap: 9px;
             font-size: 14px;
             color: var(--fg);
+            transition: transform var(--t);
+        }
+
+        .si:hover {
+            transform: translateX(3px);
         }
 
         .sd {
@@ -673,12 +803,13 @@
             border: 1px solid var(--border);
             border-radius: 10px;
             background: var(--surface);
-            transition: border-color var(--t), background var(--t);
+            transition: border-color var(--t), background var(--t), transform var(--t);
         }
 
         .crow:hover {
             border-color: color-mix(in oklch, var(--accent) 40%, var(--border));
             background: var(--accent-s);
+            transform: translateX(4px);
         }
 
         .crow svg {
@@ -716,16 +847,18 @@
 
 <body>
 
-    <!-- NAV -->
+    <div id="cursor-glow"></div>
+
     <nav>
+        <div id="scroll-bar"></div>
         <div class="wrap nav-i">
             <a href="#hero" class="nav-logo">Pedro Lima</a>
             <div class="nav-r">
                 <ul class="nav-links">
-                    <li><a href="#about" data-i18n="n_about"></a></li>
-                    <li><a href="#projects" data-i18n="n_projects"></a></li>
-                    <li><a href="#stack" data-i18n="n_stack"></a></li>
-                    <li><a href="#contact" data-i18n="n_contact"></a></li>
+                    <li><a href="#about" data-i18n="n_about" data-section="about"></a></li>
+                    <li><a href="#projects" data-i18n="n_projects" data-section="projects"></a></li>
+                    <li><a href="#stack" data-i18n="n_stack" data-section="stack"></a></li>
+                    <li><a href="#contact" data-i18n="n_contact" data-section="contact"></a></li>
                 </ul>
                 <div class="nav-controls">
                     <div class="lang-sw">
@@ -743,29 +876,28 @@
                                 d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
                         </svg>
                     </button>
-                    
-                </div>
-                <div class="nav-controls">
-
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
     <section id="hero">
+        <div class="hero-glow">
+            <div class="hg1" id="hg1"></div>
+            <div class="hg2" id="hg2"></div>
+        </div>
         <div class="wrap">
-            <div class="badge">
+            <div class="badge he-1">
                 <span class="dot"></span>
                 <span data-i18n="badge"></span>
             </div>
-            <h1 class="hero-name">Pedro Lima</h1>
-            <p class="hero-sub" data-i18n="tagline"></p>
-            <div class="ctas">
+            <h1 class="hero-name he-2">Pedro Lima</h1>
+            <p class="hero-sub he-3" data-i18n="tagline"></p>
+            <div class="ctas he-4">
                 <a href="#projects" class="btn-p" data-i18n="cta1"></a>
                 <a href="#contact" class="btn-s" data-i18n="cta2"></a>
             </div>
-            <div class="socials">
+            <div class="socials he-5">
                 <a href="https://github.com/PClima" target="_blank" rel="noopener" class="soc">
                     <svg viewBox="0 0 16 16" fill="currentColor">
                         <path
@@ -784,32 +916,31 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about" class="sec">
         <div class="wrap">
-            <p class="lbl" data-i18n="n_about"></p>
-            <h2 class="sec-h" data-i18n="about_h"></h2>
+            <p class="lbl reveal" data-i18n="n_about"></p>
+            <h2 class="sec-h reveal" data-i18n="about_h" style="transition-delay:0.07s"></h2>
             <div class="about-g">
-                <div class="about-txt">
+                <div class="about-txt reveal" style="transition-delay:0.14s">
                     <p data-i18n="about_p1"></p>
                     <p data-i18n="about_p2"></p>
                 </div>
-                <div class="about-side">
+                <div class="about-side reveal" style="transition-delay:0.22s">
                     <div class="photo-wrap">
                         <img src="https://res.cloudinary.com/drokum14x/image/upload/v1767994186/profile2_sxun6t.jpg"
                             alt="Pedro Lima">
                     </div>
                     <div class="stats-g">
                         <div class="stat">
-                            <div class="stat-n">4+</div>
+                            <div class="stat-n" data-count="4" data-suffix="+">4+</div>
                             <div class="stat-l" data-i18n="st1"></div>
                         </div>
                         <div class="stat">
-                            <div class="stat-n">2</div>
+                            <div class="stat-n" data-count="2" data-suffix="">2</div>
                             <div class="stat-l" data-i18n="st2"></div>
                         </div>
                         <div class="stat">
-                            <div class="stat-n">3+</div>
+                            <div class="stat-n" data-count="3" data-suffix="+">3+</div>
                             <div class="stat-l" data-i18n="st3"></div>
                         </div>
                         <div class="stat">
@@ -822,14 +953,13 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="sec">
         <div class="wrap">
-            <p class="lbl" data-i18n="n_projects"></p>
-            <h2 class="sec-h" data-i18n="proj_h"></h2>
+            <p class="lbl reveal" data-i18n="n_projects"></p>
+            <h2 class="sec-h reveal" data-i18n="proj_h" style="transition-delay:0.07s"></h2>
             <div class="proj-g">
 
-                <div class="proj-c">
+                <div class="proj-c reveal" style="transition-delay:0.10s">
                     <div class="proj-top">
                         <div class="proj-ico ico-1">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -848,7 +978,7 @@
                     </div>
                 </div>
 
-                <div class="proj-c">
+                <div class="proj-c reveal" style="transition-delay:0.20s">
                     <div class="proj-top">
                         <div class="proj-ico ico-2">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -873,7 +1003,7 @@
                     </div>
                 </div>
 
-                <div class="proj-c">
+                <div class="proj-c reveal" style="transition-delay:0.30s">
                     <div class="proj-top">
                         <div class="proj-ico ico-3">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -900,13 +1030,12 @@
         </div>
     </section>
 
-    <!-- STACK -->
     <section id="stack" class="sec">
         <div class="wrap">
-            <p class="lbl" data-i18n="n_stack"></p>
-            <h2 class="sec-h" data-i18n="stack_h"></h2>
+            <p class="lbl reveal" data-i18n="n_stack"></p>
+            <h2 class="sec-h reveal" data-i18n="stack_h" style="transition-delay:0.07s"></h2>
             <div class="stack-g">
-                <div class="scat">
+                <div class="scat reveal" style="transition-delay:0.08s">
                     <h3 data-i18n="sc1"></h3>
                     <div class="sitems">
                         <div class="si"><span class="sd" style="--cat: var(--accent)"></span>JavaScript / TypeScript
@@ -915,7 +1044,7 @@
                         <div class="si"><span class="sd" style="--cat: var(--accent)"></span>HTML &amp; CSS</div>
                     </div>
                 </div>
-                <div class="scat">
+                <div class="scat reveal" style="transition-delay:0.14s">
                     <h3 data-i18n="sc2"></h3>
                     <div class="sitems">
                         <div class="si"><span class="sd" style="--cat: var(--accent-2)"></span>Node.js / NestJS</div>
@@ -924,7 +1053,7 @@
                         <div class="si"><span class="sd" style="--cat: var(--accent-2)"></span>PHP</div>
                     </div>
                 </div>
-                <div class="scat">
+                <div class="scat reveal" style="transition-delay:0.20s">
                     <h3 data-i18n="sc3"></h3>
                     <div class="sitems">
                         <div class="si"><span class="sd" style="--cat: oklch(62% 0.14 295)"></span>Cognigy</div>
@@ -933,7 +1062,7 @@
                         <div class="si"><span class="sd" style="--cat: oklch(62% 0.14 295)"></span>Generative AI</div>
                     </div>
                 </div>
-                <div class="scat">
+                <div class="scat reveal" style="transition-delay:0.26s">
                     <h3 data-i18n="sc4"></h3>
                     <div class="sitems">
                         <div class="si"><span class="sd" style="--cat: oklch(58% 0.14 145)"></span>AWS (EC2, RDS)</div>
@@ -942,14 +1071,14 @@
                         <div class="si"><span class="sd" style="--cat: oklch(58% 0.14 145)"></span>Git / GitHub</div>
                     </div>
                 </div>
-                <div class="scat">
+                <div class="scat reveal" style="transition-delay:0.32s">
                     <h3 data-i18n="sc5"></h3>
                     <div class="sitems">
                         <div class="si"><span class="sd" style="--cat: var(--accent-3)"></span>PostgreSQL</div>
                         <div class="si"><span class="sd" style="--cat: var(--accent-3)"></span>MySQL</div>
                     </div>
                 </div>
-                <div class="scat">
+                <div class="scat reveal" style="transition-delay:0.38s">
                     <h3 data-i18n="sc6"></h3>
                     <div class="sitems">
                         <div class="si"><span class="sd"></span>Swagger / OpenAPI</div>
@@ -962,15 +1091,14 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="sec">
         <div class="wrap">
-            <p class="lbl" data-i18n="n_contact"></p>
-            <h2 class="sec-h" data-i18n="cont_h"></h2>
+            <p class="lbl reveal" data-i18n="n_contact"></p>
+            <h2 class="sec-h reveal" data-i18n="cont_h" style="transition-delay:0.07s"></h2>
             <div class="contact-b">
-                <p data-i18n="cont_p"></p>
+                <p class="reveal" data-i18n="cont_p" style="transition-delay:0.14s"></p>
                 <div class="clist">
-                    <a href="mailto:cordeirolima.pedro@gmail.com" class="crow">
+                    <a href="mailto:cordeirolima.pedro@gmail.com" class="crow reveal" style="transition-delay:0.22s">
                         <svg viewBox="0 0 16 16" fill="currentColor">
                             <path
                                 d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
@@ -978,7 +1106,8 @@
                         cordeirolima.pedro@gmail.com
                         <span class="cbadge">Email</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/pedro-cordeiro/" target="_blank" rel="noopener" class="crow">
+                    <a href="https://www.linkedin.com/in/pedro-cordeiro/" target="_blank" rel="noopener"
+                        class="crow reveal" style="transition-delay:0.30s">
                         <svg viewBox="0 0 16 16" fill="currentColor">
                             <path
                                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
@@ -986,7 +1115,8 @@
                         linkedin.com/in/pedro-cordeiro
                         <span class="cbadge">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/PClima" target="_blank" rel="noopener" class="crow">
+                    <a href="https://github.com/PClima" target="_blank" rel="noopener" class="crow reveal"
+                        style="transition-delay:0.38s">
                         <svg viewBox="0 0 16 16" fill="currentColor">
                             <path
                                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
@@ -994,7 +1124,8 @@
                         github.com/PClima
                         <span class="cbadge">GitHub</span>
                     </a>
-                    <a href=".\[EN]CV-PedroLima.pdf" target="_blank" rel="noopener" class="crow" role="button" download>
+                    <a href=".\[EN]CV-PedroLima.pdf" target="_blank" rel="noopener" class="crow reveal"
+                        style="transition-delay:0.38s" role="button" download>
                         <svg fill="currentColor" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 45.057 45.057" xml:space="preserve">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -1025,7 +1156,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="wrap foot">
             <p data-i18n="foot"></p>
@@ -1104,10 +1234,6 @@
             try { localStorage.setItem('pl_theme', next); } catch (e) { }
         }
 
-        function dowload_cv(){
-
-        }
-
         (function () {
             let lang = 'pt', theme = 'light';
             try {
@@ -1121,6 +1247,114 @@
             }
             setLang(lang);
         })();
+
+        /* SCROLL PROGRESS */
+        const scrollBar = document.getElementById('scroll-bar');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const pct = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+            scrollBar.style.width = pct + '%';
+        }, { passive: true });
+
+        /* CURSOR SPOTLIGHT */
+        const cg = document.getElementById('cursor-glow');
+        document.addEventListener('mousemove', e => {
+            cg.style.left = e.clientX + 'px';
+            cg.style.top = e.clientY + 'px';
+        }, { passive: true });
+        document.addEventListener('mouseleave', () => { cg.style.opacity = '0'; });
+        document.addEventListener('mouseenter', () => { cg.style.opacity = '1'; });
+
+        /* HERO PARALLAX GLOW */
+        const hero = document.getElementById('hero');
+        const hg1 = document.getElementById('hg1');
+        const hg2 = document.getElementById('hg2');
+
+        hero.addEventListener('mousemove', e => {
+            const r = hero.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            hg1.style.transform = `translate(${x * 28}px, ${y * 18}px)`;
+            hg2.style.transform = `translate(${-x * 22}px, ${-y * 14}px)`;
+        }, { passive: true });
+
+        hero.addEventListener('mouseleave', () => {
+            hg1.style.transform = '';
+            hg2.style.transform = '';
+        });
+
+        /* SCROLL REVEAL */
+        const revealObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in');
+                    revealObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+        /* COUNTER ANIMATION */
+        function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+        function animateCount(el, target, suffix, duration) {
+            const start = performance.now();
+            function tick(now) {
+                const t = Math.min((now - start) / duration, 1);
+                el.textContent = Math.round(easeOutCubic(t) * target) + suffix;
+                if (t < 1) requestAnimationFrame(tick);
+                else el.textContent = target + suffix;
+            }
+            requestAnimationFrame(tick);
+        }
+
+        const counterObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (!e.isIntersecting) return;
+                counterObs.unobserve(e.target);
+                e.target.querySelectorAll('[data-count]').forEach(el => {
+                    const target = parseInt(el.getAttribute('data-count'));
+                    const suffix = el.getAttribute('data-suffix') || '';
+                    el.textContent = '0' + suffix;
+                    setTimeout(() => animateCount(el, target, suffix, 1100), 200);
+                });
+            });
+        }, { threshold: 0.4 });
+
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) counterObs.observe(aboutSection);
+
+        /* CARD 3D TILT */
+        document.querySelectorAll('.proj-c').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                card.style.transform = `perspective(700px) rotateY(${x * 7}deg) rotateX(${-y * 5}deg) translateY(-3px)`;
+                card.style.boxShadow = `0 14px 38px oklch(0% 0 0 / 0.09)`;
+            }, { passive: true });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+
+        /* NAV ACTIVE SECTION */
+        const sections = ['about', 'projects', 'stack', 'contact'].map(id => document.getElementById(id));
+        const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+
+        function updateActiveNav() {
+            const scrollY = window.scrollY + 100;
+            let current = '';
+            sections.forEach(sec => { if (sec && sec.offsetTop <= scrollY) current = sec.id; });
+            navLinks.forEach(a => {
+                a.classList.toggle('active', a.getAttribute('data-section') === current);
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        updateActiveNav();
     </script>
 </body>
 
